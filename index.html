@@ -1,87 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>调查问卷</title>
+<meta charset="UTF-8">
+<title>心理问卷调查</title>
 </head>
 <body>
-    <h1>调查问卷</h1>
-    <form action="/submit" method="post">
-        <label for="name">1.姓名:</label><br>
-        <input type="text" id="name" name="name" required><br>
-        <label for="gender">2.性别:</label><br>
-    <select id="gender" name="gender">
-        <option value="male">男</option>
-        <option value="female">女</option>
-        <option value="other">其他</option>
+
+<h1>心理问卷调查</h1>
+
+<form action="/submit-survey" method="post">
+
+    <label for="name">姓名:</label><br>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="age">年龄:</label><br>
+    <input type="number" id="age" name="age" min="0" required><br>
+
+    <label for="q1">1. 你经常感到焦虑吗？</label><br>
+    <input type="radio" id="q1-yes" name="q1" value="yes" required>
+    <label for="q1-yes">是</label><br>
+    <input type="radio" id="q1-no" name="q1" value="no">
+    <label for="q1-no">否</label><br>
+
+    <label for="q2">2. 你觉得自己的压力如何？</label><br>
+    <select id="q2" name="q2" required>
+        <option value="">请选择</option>
+        <option value="low">很低</option>
+        <option value="medium">中等</option>
+        <option value="high">很高</option>
     </select><br>
-        <label for="university">3.所在高校名称:</label><br>
-        <input type="text" id="university" name="university" required><br>
-        <label for="student_id">4.学号:</label><br>
-        <input type="text" id="student_id" name="student_id" required><br>
-        <label for="major">5.专业:</label><br>
-        <input type="text" id="major" name="major" required><br>
-        <label for="grade" >6.年级:</label>
-        <select id="grade" name="grade">
-            <option value="one">大一</option>
-            <option value="two">大二</option>
-            <option value="three">大三</option>
-            <option value="four">大四</option>
-        </select><br>
 
+    <label for="q3">3. 你通常如何应对压力？</label><br>
+    <textarea id="q3" name="q3" rows="4" cols="50" required></textarea><br>
 
-        <p>7.你的学业压力很大？</p>
-        <input type="radio" id="stress_level_strongly_agree" name="stress_level" value="strongly_agree">
-        <label for="stress_level_strongly_agree">非常同意</label><br>
-        <input type="radio" id="stress_level_agree" name="stress_level" value="agree">
-        <label for="stress_level_agree">同意</label><br>
+    <input type="submit" value="提交问卷">
 
-        <input type="radio" id="stress_level_neutral" name="stress_level" value="neutral">
-        <label for="stress_level_neutral">中立</label><br>
+</form>
 
-        <input type="radio" id="stress_level_disagree" name="stress_level" value="disagree">
-        <label for="stress_level_disagree">不同意</label><br>
-
-        <input type="radio" id="stress_level_strongly_disagree" name="stress_level" value="strongly_disagree">
-        <label for="stress_level_strongly_disagree">非常不同意</label><br>
-
-        
-        <p>8. 你有良好的睡眠?</p>
-        <input type="radio" id="sleep_strongly_disagree" name="sleep" value="strongly_disagree">
-        <label for="sleep_strongly_disagree">非常不同意</label><br>
-        <input type="radio" id="sleep_disagree" name="sleep" value="disagree">
-        <label for="sleep_disagree">不同意</label><br>
-        <input type="radio" id="sleep_neutral" name="sleep" value="neutral">
-        <label for="sleep_neutral">中立</label><br>
-        <input type="radio" id="sleep_agree" name="sleep" value="agree">
-        <label for="sleep_agree">同意</label><br>
-        <input type="radio" id="sleep_strongly_agree" name="sleep" value="strongly_agree">
-        <label for="sleep_strongly_agree">非常同意</label><br><br>
-
-        <p>9. 你有良好的情绪情感理解、表达和控制能力？</p>
-        <input type="radio" id="emotion_strongly_disagree" name="emotion" value="strongly_disagree">
-        <label for="emotion_strongly_disagree">非常不同意</label><br>
-        <input type="radio" id="emotion_disagree" name="emotion" value="disagree">
-        <label for="emotion_disagree">不同意</label><br>
-        <input type="radio" id="emotion_neutral" name="emotion" value="neutral">
-        <label for="emotion_neutral">中立</label><br>
-        <input type="radio" id="emotion_agree" name="emotion" value="agree">
-        <label for="emotion_agree">同意</label><br>
-        <input type="radio" id="emotion_strongly_agree" name="emotion" value="strongly_agree">
-        <label for="emotion_strongly_agree">非常同意</label><br><br>
-
-        <p>10. 你有良好的心理健康状态?</p>
-        <input type="radio" id="mental_health_strongly_disagree" name="mental_health" value="strongly_disagree">
-        <label for="mental_health_strongly_disagree">非常不同意</label><br>
-        <input type="radio" id="mental_health_disagree" name="mental_health" value="disagree">
-        <label for="mental_health_disagree">不同意</label><br>
-        <input type="radio" id="mental_health_neutral" name="mental_health" value="neutral">
-        <label for="mental_health_neutral">中立</label><br>
-        <input type="radio" id="mental_health_agree" name="mental_health" value="agree">
-        <label for="mental_health_agree">同意</label><br>
-        <input type="radio" id="mental_health_strongly_agree" name="mental_health" value="strongly_agree">
-        <label for="mental_health_strongly_agree">非常同意</label><br><br>
-    <input type="submit" value="提交">
-    </form>
 </body>
 </html>
